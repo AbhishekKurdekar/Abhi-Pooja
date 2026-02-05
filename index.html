@@ -20,3 +20,47 @@
 
     <input type="password" id="password" placeholder="Enter our secret">
     <button onclick="unlock()">Unlock ❤️</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="content" hidden>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero">
+  <h1>From Us to Forever 💞</h1>
+  <p>Some stories are written by destiny, ours was written by love</p>
+</section>
+
+<div class="pattern-divider">
+  <img src="images/divider-pattern.png" alt="divider">
+</div>
+
+<section class="journey">
+  <h2>Our Journey 🌸</h2>
+  <p>
+    We didn’t plan this love… it just happened 💫<br><br>
+    Ninna jothe irbeku anta ansthide " not just today, but for every tomorrow ❤️
+  </p>
+</section>
+
+<section class="gallery">
+  <h2>Our Memories 📸</h2>
+  <div id="photoGrid" class="photos"></div>
+</section>
+
+<section class="proposal">
+  <h1>Will you be my Valentine? 💘</h1>
+  <button id="yes" onclick="yesClick()">Yes ❤️</button>
+  <button id="no" onmouseover="moveNo()">No 💔</button>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
