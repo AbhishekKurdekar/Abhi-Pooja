@@ -15,21 +15,19 @@
   </div>
 
   <div class="lock-card">
-    <div class="card-content">
-      <div class="profile-circle">
-        <img src="image_148331.jpg" alt="Us">
-      </div>
-      <h1>A Little Surprise</h1>
-      <p>Only for the one who owns my heart ❤️</p>
-      
-      <div class="input-wrapper">
-        <input type="password" id="password" placeholder="Enter our secret">
-        <span class="heart-suffix">❤️</span>
-      </div>
-      
-      <button onclick="unlock()" class="unlock-btn">Unlock 💖</button>
-      <p id="error"></p>
+    <div class="profile-circle">
+      <img src="image_148331.jpg" alt="Us">
     </div>
+    <h1>A Little Surprise</h1>
+    <p>Only for the one who owns my heart ❤️</p>
+    
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Enter our secret">
+      <span class="heart-icon">❤️</span>
+    </div>
+    
+    <button onclick="unlock()" class="unlock-btn">Unlock 💖</button>
+    <p id="error"></p>
   </div>
 </div>
 
@@ -38,23 +36,24 @@
     <source src="music.mp3" type="audio/mp3">
   </audio>
 
-  <header class="main-header">
-    <div class="header-text-box">
-      <h1 class="fade-in">From Us to Forever 💞</h1>
-      <p class="fade-in">Some stories are written by destiny, ours was written by love</p>
-      
+  <header class="split-header">
+    <div class="top-pink">
+      <h1 class="pop-in">From Us to Forever 💞</h1>
+      <p class="fade-in">"Every heartbeat of mine whispers your name."</p>
+    </div>
+    <div class="bottom-red">
       <h2 class="slide-up">Our Journey 🌸</h2>
-      <p class="slide-up journey-text">
+      <p class="journey-text slide-up">
         We didn’t plan this love… it just happened 💫<br>
-        From strangers to something so beautiful, every laugh, every silence, every fight brought us closer.
+        From strangers to soulmates, every laugh and every fight brought us closer. 
+        <br><strong>"In the garden of life, you are my most beautiful flower."</strong>
       </p>
       <p class="kannada-text">Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️</p>
-      
-      <h2 class="slide-up">Our Memories 📸</h2>
     </div>
   </header>
 
   <section class="gallery">
+    <h2 class="gallery-title">Our Memories 📸</h2>
     <div class="photos">
       <div class="photo-card">
         <img src="photos/1.jpg" alt="Memory">
@@ -66,18 +65,16 @@
       </div>
       <div class="photo-card">
         <img src="photos/3.jpg" alt="Memory">
-        <div class="caption">Always better together 💍</div>
+        <div class="caption">Forever to go... 💍</div>
       </div>
     </div>
   </section>
 
   <section class="proposal">
-    <div class="proposal-content">
-      <h1>Will you be my Valentine? 💘</h1>
-      <div class="btn-group">
-        <button id="yes" onclick="yesClick()">Yes ❤️</button>
-        <button id="no" onmouseover="moveNo()">No 💔</button>
-      </div>
+    <h1>Will you be my Valentine? 💘</h1>
+    <div class="btn-group">
+      <button id="yes" onclick="yesClick()">Yes ❤️</button>
+      <button id="no" onmouseover="moveNo()">No 💔</button>
     </div>
   </section>
 </div>
