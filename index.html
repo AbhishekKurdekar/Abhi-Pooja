@@ -1,105 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Love Story 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>From Us to Forever 💕</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div id="lockScreen" class="lock">
-  <div class="lock-split-bg">
-    <div class="lock-gradient-side"></div>
-    <div class="lock-image-side"></div>
-  </div>
-
-  <div class="lock-card">
-    <div class="profile-circle">
-      <img src="image_148331.jpg" alt="Us">
-    </div>
-    <h1>A Little Surprise</h1>
-    <p>Only for the one who owns my heart ❤️</p>
-
-    <div class="input-wrapper">
-      <input type="password" id="password" placeholder="Enter our secret">
-      <span class="heart-suffix">❤️</span>
-    </div>
-
-    <button onclick="unlock()" class="unlock-btn">Unlock 💖</button>
-    <p id="error"></p>
-  </div>
-</div>
-
-<div id="content" style="display:none;">
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mp3">
-  </audio>
-
-  <header class="page-header pink-bg">
-    <h1 class="pop-in">From Us to Forever 💞</h1>
-    <p class="fade-in">"In the story of my life, the best chapters are with you."</p>
-  </header>
-
-  <section class="journey-section red-bg">
-    <h2 class="slide-up">Our Journey 🌸</h2>
-    <div class="journey-text slide-up">
-      <p>We didn’t plan this love… it just happened 💫</p>
-      <p>From strangers to soulmates, every laugh and every fight brought us closer.</p>
-      <p class="kannada-text">
-        Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️
-      </p>
-    </div>
+  <!-- HERO / FIRST PAGE -->
+  <section class="hero">
+    <img src="images/logo.jpg" alt="Logo" class="logo" />
+    <h1>From Us to Forever 💞</h1>
+    <p class="quote">"In the story of my life, the best chapters are with you."</p>
   </section>
 
-  <section class="gallery-section pink-bg">
-    <h2 class="gallery-title">Our Memories 📸</h2>
-    <div class="photos">
-      <div class="photo-card">
-        <img src="photos/1.jpg">
-        <div class="caption">The day everything felt right 💕</div>
+  <!-- JOURNEY -->
+  <section class="journey">
+    <h2>Our Journey 🌸</h2>
+    <p>
+      We didn’t plan this love… it just happened 💫 <br>
+      From strangers to soulmates. <br>
+      Ninna jothe irbeku anta ansthide — not just today, but forever ❤️
+    </p>
+  </section>
+
+  <!-- MEMORIES -->
+  <section class="memories">
+    <h2>Our Memories 📸</h2>
+
+    <div class="gallery">
+      <div class="card" data-text="The day everything felt right 💕">
+        <img src="images/img1.jpg" alt="memory1" />
       </div>
-      <div class="photo-card">
-        <img src="photos/2.jpg">
-        <div class="caption">Your smile, my weakness 😊</div>
+
+      <div class="card" data-text="Your smile, my weakness 😊">
+        <img src="images/img2.jpg" alt="memory2" />
       </div>
-      <div class="photo-card">
-        <img src="photos/3.jpg">
-        <div class="caption">Always better together 💍</div>
+
+      <div class="card" data-text="Always better together 💍">
+        <img src="images/img3.jpg" alt="memory3" />
       </div>
     </div>
   </section>
 
-  <section class="proposal-section red-bg">
-    <h1>Will you be my Valentine? 💘</h1>
-    <div class="btn-group">
-      <button id="yes" onclick="yesClick()">Yes ❤️</button>
-      <button id="no" onmouseover="moveNo()">No 💔</button>
-    </div>
+  <!-- VALENTINE -->
+  <section class="valentine">
+    <h2>Will you be my Valentine? 💖</h2>
   </section>
-</div>
 
-<div id="finalScreen" class="final-screen" style="display:none;">
-  <div class="final-overlay">
-    <div class="merge-names-container">
-      <div id="namesInitial" class="merge-names">
-        <span>Abhishek</span>
-        <span class="heart-anim">❤️</span>
-        <span>Pooja</span>
-      </div>
-
-      <div id="finalName" class="final-name">
-        Pooja Abhishek Kurdekar 💍
-      </div>
-    </div>
-
-    <div id="finalMsg" class="final-msg">
-      Thank you for choosing me.<br>
-      Today, tomorrow, and all our forever ❤️
-    </div>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
