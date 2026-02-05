@@ -12,9 +12,9 @@
 <div id="heartContainer"></div>
 
 <!-- LOCK SCREEN -->
-<div id="lockScreen" class="lock">
+<div id="lockScreen">
   <div class="lock-card">
-    <img src="images/lock-photo.jpg" alt="Us">
+    <img src="yes-bg.jpg" class="lock-image" alt="Us">
     <h1>💌 A Little Surprise</h1>
     <p>Only for the one who owns my heart ❤️</p>
 
@@ -36,27 +36,44 @@
     <p>Some stories are written by destiny, ours was written by love</p>
   </section>
 
-  <!-- PATTERN DIVIDER -->
-  <div class="pattern-divider">
-    <img src="images/divider-pattern.png" alt="divider">
-  </div>
-
   <section class="journey">
     <h2>Our Journey 🌸</h2>
     <p>
-      We didn’t plan this love… it just happened 💫  
-      <br><br>
-      Ninna jothe irbeku anta ansthide —  
-      not just today, but for every tomorrow ❤️
+      We didn’t plan this love… it just happened 💫<br><br>
+      Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️
     </p>
   </section>
 
   <section class="gallery">
     <h2>Our Memories 📸</h2>
-    <!-- IMAGES LOAD HERE VIA JS -->
     <div id="photoGrid" class="photos"></div>
   </section>
 
   <section class="proposal">
     <h1>Will you be my Valentine? 💘</h1>
-    <button id="yes" onclick="yesClick
+    <button id="yes" onclick="yesClick()">Yes ❤️</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
+  </section>
+
+  <!-- FINAL MERGE -->
+  <section id="finalScreen">
+    <div class="merge-names">
+      <span class="name abhi">Abhishek</span>
+      <span class="heart">❤️</span>
+      <span class="name pooja">Pooja</span>
+    </div>
+
+    <div id="finalHeart"></div>
+
+    <h1 class="final-name">Pooja Abhishek Kurdekar</h1>
+    <p class="final-message">
+      Thank you for choosing me.<br>
+      Today, tomorrow, and all our forever ❤️
+    </p>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
