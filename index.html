@@ -8,76 +8,15 @@
 </head>
 <body>
 
+<!-- FLOATING HEARTS -->
+<div id="heartContainer"></div>
+
 <!-- LOCK SCREEN -->
 <div id="lockScreen" class="lock">
   <div class="lock-card">
-    <img src="YOUR_IMAGE_PATH_HERE" class="lock-img">
+    <img src="images/lock-photo.jpg" alt="Us">
     <h1>💌 A Little Surprise</h1>
     <p>Only for the one who owns my heart ❤️</p>
 
     <input type="password" id="password" placeholder="Enter our secret">
     <button onclick="unlock()">Unlock ❤️</button>
-    <p id="error"></p>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="content" style="display:none;">
-
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mp3">
-</audio>
-
-<section class="hero">
-  <h1 class="fade-in">From Us to Forever 💞</h1>
-  <p class="fade-in-delay">Some stories are written by destiny, ours was written by love</p>
-</section>
-
-<!-- PATTERN DIVIDER -->
-<div class="pattern-divider">
-  <img src="PATTERN_IMAGE_PATH_HERE">
-</div>
-
-<section class="journey">
-  <h2>Our Journey 🌸</h2>
-  <p>
-    We didn’t plan this love… it just happened 💫  
-    From strangers to something so beautiful, every laugh, every silence brought us closer.
-    <br><br>
-    Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️
-  </p>
-</section>
-
-<section class="gallery">
-  <h2>Our Memories 📸</h2>
-
-  <div class="photos">
-    <!-- ROWS AUTO HANDLE -->
-    <img src="photos/1.jpg">
-    <img src="photos/2.jpg">
-    <img src="photos/3.jpg">
-
-    <img src="photos/4.jpg" class="portrait">
-    <img src="photos/5.jpg" class="portrait">
-
-    <img src="photos/6.jpg">
-    <img src="photos/7.jpg">
-    <img src="photos/8.jpg">
-
-    <img src="photos/9.jpg">
-    <img src="photos/10.jpg">
-    <img src="photos/11.jpg">
-  </div>
-</section>
-
-<section class="proposal">
-  <h1>Will you be my Valentine? 💘</h1>
-  <button id="yes" onclick="yesClick()">Yes ❤️</button>
-  <button id="no" onmouseover="moveNo()">No 💔</button>
-</section>
-
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
