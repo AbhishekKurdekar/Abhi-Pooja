@@ -19,32 +19,29 @@ function moveNo() {
 function yesClick() {
   document.body.innerHTML = `
     <div class="yes-screen">
-      <div class="yes-box">
-        <h2>From Pooja Vernekar 💕</h2>
-        <p style="font-size:28px; margin:15px 0;">⬇️</p>
-        <h3>Pooja Abhishek Kurdekar 💍</h3>
-        <p style="margin-top:20px;">
+      <div>
+        <div class="name-merge">Abhishek ❤️ Pooja</div>
+        <div class="final-name">Pooja Abhishek Kurdekar</div>
+        <div class="message">
           Thank you for choosing me.<br>
           Today, tomorrow, and all our forever ❤️
-        </p>
+        </div>
       </div>
     </div>
   `;
 }
 
-/* Hearts */
+/* Floating hearts */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerText = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  heart.style.position = "fixed";
+  heart.style.bottom = "-10px";
+  heart.style.animation = "floatUp 6s linear";
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 6000);
-}, 700);
+}, 800);
 
-/* Protection */
 document.addEventListener("contextmenu", e => e.preventDefault());
-document.addEventListener("dragstart", e => {
-  if (e.target.tagName === "IMG") e.preventDefault();
-});
