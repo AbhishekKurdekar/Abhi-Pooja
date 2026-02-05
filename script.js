@@ -5,9 +5,8 @@ function unlock() {
     document.getElementById("content").style.display = "block";
     document.getElementById("bgMusic").play();
   } else {
-    const err = document.getElementById("error");
-    err.innerText = "Wrong password 💔";
-    err.style.color = "red";
+    document.getElementById("error").innerText = "Wrong password 💔";
+    document.getElementById("error").style.color = "red";
   }
 }
 
@@ -15,7 +14,6 @@ function moveNo() {
   const no = document.getElementById("no");
   const x = Math.random() * (window.innerWidth - 160) - (window.innerWidth / 2 - 80);
   const y = Math.random() * 100 - 50;
-  no.style.transition = "0.3s";
   no.style.transform = `translate(${x}px, ${y}px)`;
 }
 
@@ -24,38 +22,38 @@ function yesClick() {
   const final = document.getElementById("finalScreen");
   final.style.display = "flex";
 
-  // Name merging sequence
+  // Name Merge Sequence
   setTimeout(() => {
-    document.querySelector(".merge-names").classList.add("merge");
-  }, 1000);
+    document.getElementById("namesInitial").classList.add("hide");
+  }, 1200);
 
   setTimeout(() => {
     document.getElementById("finalName").classList.add("show");
     document.getElementById("finalMsg").classList.add("show");
-    launchConfetti();
-  }, 2500);
+    spawnHearts(30);
+  }, 2400);
 }
 
-function launchConfetti() {
-  for (let i = 0; i < 50; i++) {
-    const c = document.createElement("div");
-    c.className = "heart";
-    c.innerHTML = i % 2 === 0 ? "❤️" : "💖";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.bottom = "-20px";
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 6000);
+function spawnHearts(count) {
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+      const h = document.createElement("div");
+      h.className = "heart-float";
+      h.innerHTML = "❤️";
+      h.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 6000);
+    }, i * 100);
   }
 }
 
-// Background Floating Hearts
+// Constant background hearts
 setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.opacity = Math.random() * 0.7 + 0.3;
-  heart.style.fontSize = (Math.random() * 15 + 15) + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 700);
+  const h = document.createElement("div");
+  h.className = "heart-float";
+  h.innerHTML = "💖";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.opacity = Math.random();
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
+}, 800);
