@@ -45,6 +45,12 @@ function spawnHearts(count) {
     }, i * 100);
   }
 }
+// Click support for mobile users
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => {
+    alert(card.getAttribute("data-text"));
+  });
+});
 
 setInterval(() => {
   const h = document.createElement("div");
