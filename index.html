@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Love Story 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen" class="lock">
+  <h1>💌 A Little Surprise</h1>
+  <p>Only for the one who owns my heart ❤️</p>
+  <input type="password" id="password" placeholder="Enter our secret">
+  <button onclick="unlock()">Unlock 💕</button>
+  <p id="error"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="content" style="display:none;">
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero fade-in">
+  <h1>From Us to Forever 💞</h1>
+  <p>Some stories are written by destiny, ours was written by love</p>
+</section>
+
+<section class="journey slide-up">
+  <h2>Our Journey 🌸</h2>
+  <p>
+    We didn’t plan this love… it just happened 💫  
+    From strangers to something so beautiful,  
+    every laugh, every silence, every fight brought us closer.
+
+    <br><br>
+    Ninna jothe irbeku anta ansthide — not just today,  
+    but for every tomorrow ❤️
+  </p>
+</section>
+
+<section class="gallery slide-up">
+  <h2>Our Memories 📸</h2>
+
+  <div class="photos">
+    <!-- PHOTO CARD -->
+    <div class="photo-card">
+      <img src="photos/1.jpg">
+      <div class="caption">The day everything felt right 💕</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/2.jpg">
+      <div class="caption">Your smile, my weakness 😊</div>
+    </div>
+    
+    <div class="photo-card">
+      <img src="photos/3.jpg">
+      <div class="caption">Your smile, my weakness 😊</div>
+    </div>
+    
+    <!-- Repeat same structure till 15 -->
+    <!-- Just change image number & caption text -->
+  </div>
+</section>
+
+<section class="proposal fade-in">
+  <h1>Will you be my Valentine? 💘</h1>
+  <button id="yes" onclick="yesClick()">Yes ❤️</button>
+  <button id="no" onmouseover="moveNo()">No 💔</button>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
