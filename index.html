@@ -21,9 +21,9 @@
     <h1>A Little Surprise</h1>
     <p>Only for the one who owns my heart ❤️</p>
     
-    <div class="input-group">
+    <div class="input-wrapper">
       <input type="password" id="password" placeholder="Enter our secret">
-      <span class="heart-icon">❤️</span>
+      <span class="heart-suffix">❤️</span>
     </div>
     
     <button onclick="unlock()" class="unlock-btn">Unlock 💖</button>
@@ -36,23 +36,21 @@
     <source src="music.mp3" type="audio/mp3">
   </audio>
 
-  <header class="split-header">
-    <div class="top-pink">
-      <h1 class="pop-in">From Us to Forever 💞</h1>
-      <p class="fade-in">"Every heartbeat of mine whispers your name."</p>
-    </div>
-    <div class="bottom-red">
-      <h2 class="slide-up">Our Journey 🌸</h2>
-      <p class="journey-text slide-up">
-        We didn’t plan this love… it just happened 💫<br>
-        From strangers to soulmates, every laugh and every fight brought us closer. 
-        <br><strong>"In the garden of life, you are my most beautiful flower."</strong>
-      </p>
-      <p class="kannada-text">Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️</p>
-    </div>
+  <header class="page-header pink-bg">
+    <h1 class="pop-in">From Us to Forever 💞</h1>
+    <p class="fade-in">"In the story of my life, the best chapters are with you."</p>
   </header>
 
-  <section class="gallery">
+  <section class="journey-section red-bg">
+    <h2 class="slide-up">Our Journey 🌸</h2>
+    <div class="journey-text slide-up">
+      <p>We didn’t plan this love… it just happened 💫</p>
+      <p>From strangers to soulmates, every laugh and every fight brought us closer.</p>
+      <p class="kannada-text">Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️</p>
+    </div>
+  </section>
+
+  <section class="gallery-section pink-bg">
     <h2 class="gallery-title">Our Memories 📸</h2>
     <div class="photos">
       <div class="photo-card">
@@ -65,18 +63,37 @@
       </div>
       <div class="photo-card">
         <img src="photos/3.jpg" alt="Memory">
-        <div class="caption">Forever to go... 💍</div>
+        <div class="caption">Always better together 💍</div>
       </div>
     </div>
   </section>
 
-  <section class="proposal">
+  <section class="proposal-section red-bg">
     <h1>Will you be my Valentine? 💘</h1>
     <div class="btn-group">
       <button id="yes" onclick="yesClick()">Yes ❤️</button>
       <button id="no" onmouseover="moveNo()">No 💔</button>
     </div>
   </section>
+</div>
+
+<div id="finalScreen" class="final-screen" style="display:none;">
+  <div class="final-overlay">
+    <div class="merge-names">
+      <span id="nameA">Abhishek</span>
+      <span class="heart-anim">❤️</span>
+      <span id="nameB">Pooja</span>
+    </div>
+
+    <div id="finalName" class="final-name">
+      Pooja Abhishek Kurdekar 💍
+    </div>
+
+    <div id="finalMsg" class="final-msg">
+      Thank you for choosing me.<br>
+      Today, tomorrow, and all our forever ❤️
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
