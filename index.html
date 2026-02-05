@@ -2,92 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Our Love Story 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Love Story 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOCK SCREEN -->
 <div id="lockScreen" class="lock">
+  <div class="lock-split-bg">
+    <div class="lock-gradient-side"></div>
+    <div class="lock-image-side"></div>
+  </div>
+
   <div class="lock-card">
-    <img src="images/lock-photo.jpg" alt="Us">
-    <h1>💌 A Little Surprise</h1>
-    <p>Only for the one who owns my heart ❤️</p>
-    <input type="password" id="password" placeholder="Enter our secret">
-    <button onclick="unlock()">Unlock 💕</button>
-    <p id="error"></p>
+    <div class="card-content">
+      <div class="profile-circle">
+        <img src="image_148331.jpg" alt="Us">
+      </div>
+      <h1>A Little Surprise</h1>
+      <p>Only for the one who owns my heart ❤️</p>
+      
+      <div class="input-wrapper">
+        <input type="password" id="password" placeholder="Enter our secret">
+        <span class="heart-suffix">❤️</span>
+      </div>
+      
+      <button onclick="unlock()" class="unlock-btn">Unlock 💖</button>
+      <p id="error"></p>
+    </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div id="content" style="display:none;">
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mp3">
-</audio>
-
-<section class="hero fade-in">
-  <h1>From Us to Forever 💞</h1>
-  <p>Some stories are written by destiny, ours was written by love</p>
-</section>
-
-<section class="journey slide-up">
-  <h2>Our Journey 🌸</h2>
-  <p>
-    We didn’t plan this love… it just happened 💫  
-    From strangers to something so beautiful,  
-    every laugh, every silence, every fight brought us closer.
-    <br><br>
-    Ninna jothe irbeku anta ansthide — not just today,  
-    but for every tomorrow ❤️
-  </p>
-</section>
-
-<section class="gallery slide-up">
-  <h2>Our Memories 📸</h2>
-  <div class="photos">
-    <div class="photo-card">
-      <img src="photos/1.jpg">
-      <div class="caption">The day everything felt right 💕</div>
+  <header class="main-header">
+    <div class="header-text-box">
+      <h1 class="fade-in">From Us to Forever 💞</h1>
+      <p class="fade-in">Some stories are written by destiny, ours was written by love</p>
+      
+      <h2 class="slide-up">Our Journey 🌸</h2>
+      <p class="slide-up journey-text">
+        We didn’t plan this love… it just happened 💫<br>
+        From strangers to something so beautiful, every laugh, every silence, every fight brought us closer.
+      </p>
+      <p class="kannada-text">Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️</p>
+      
+      <h2 class="slide-up">Our Memories 📸</h2>
     </div>
+  </header>
 
-    <div class="photo-card">
-      <img src="photos/2.jpg">
-      <div class="caption">Your smile, my weakness 😊</div>
+  <section class="gallery">
+    <div class="photos">
+      <div class="photo-card">
+        <img src="photos/1.jpg" alt="Memory">
+        <div class="caption">The day everything felt right 💕</div>
+      </div>
+      <div class="photo-card">
+        <img src="photos/2.jpg" alt="Memory">
+        <div class="caption">Your smile, my weakness 😊</div>
+      </div>
+      <div class="photo-card">
+        <img src="photos/3.jpg" alt="Memory">
+        <div class="caption">Always better together 💍</div>
+      </div>
     </div>
+  </section>
 
-    <div class="photo-card">
-      <img src="photos/3.jpg">
-      <div class="caption">Moments I’ll always hold close ❤️</div>
+  <section class="proposal">
+    <div class="proposal-content">
+      <h1>Will you be my Valentine? 💘</h1>
+      <div class="btn-group">
+        <button id="yes" onclick="yesClick()">Yes ❤️</button>
+        <button id="no" onmouseover="moveNo()">No 💔</button>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="proposal fade-in">
-  <h1>Will you be my Valentine? 💘</h1>
-  <button id="yes" onclick="yesClick()">Yes ❤️</button>
-  <button id="no" onmouseover="moveNo()">No 💔</button>
-</section>
-
-</div>
-
-<!-- THIRD PAGE -->
-<div id="finalScreen" class="final-screen" style="display:none;">
-  <div class="merge-names">
-    <span>Abhishek</span>
-    <span class="merge-heart">❤️</span>
-    <span>Pooja</span>
-  </div>
-
-  <div id="finalName" class="final-name">
-    Pooja Abhishek Kurdekar 💍
-  </div>
-
-  <div id="finalMsg" class="final-msg">
-    Thank you for choosing me.<br>
-    Today, tomorrow, and all our forever ❤️
-  </div>
+  </section>
 </div>
 
 <script src="script.js"></script>
