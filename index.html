@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Love Story 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOCK SCREEN -->
 <div id="lockScreen" class="lock">
   <div class="lock-split-bg">
     <div class="lock-gradient-side"></div>
@@ -27,12 +26,11 @@
       <span class="heart-suffix">❤️</span>
     </div>
 
-    <button class="unlock-btn" onclick="unlock()">Unlock 💖</button>
+    <button onclick="unlock()" class="unlock-btn">Unlock 💖</button>
     <p id="error"></p>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div id="content" style="display:none;">
   <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mp3">
@@ -43,27 +41,35 @@
     <p class="fade-in">"In the story of my life, the best chapters are with you."</p>
   </header>
 
-  <!-- JOURNEY -->
-  <section class="journey-section red-bg wall-anim">
-    <h2>Our Journey 🌸</h2>
-    <div class="journey-text">
+  <section class="journey-section red-bg">
+    <h2 class="slide-up">Our Journey 🌸</h2>
+    <div class="journey-text slide-up">
       <p>We didn’t plan this love… it just happened 💫</p>
-      <p>From strangers to soulmates, every moment mattered.</p>
-      <p class="kannada-text">Ninna jothe irbeku anta ansthide ❤️</p>
+      <p>From strangers to soulmates, every laugh and every fight brought us closer.</p>
+      <p class="kannada-text">
+        Ninna jothe irbeku anta ansthide — not just today, but for every tomorrow ❤️
+      </p>
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery-section pink-bg">
-    <h2>Our Memories 📸</h2>
+    <h2 class="gallery-title">Our Memories 📸</h2>
     <div class="photos">
-      <div class="photo-card"><img src="photos/1.jpg"><div class="caption">That smile 💕</div></div>
-      <div class="photo-card"><img src="photos/2.jpg"><div class="caption">Us being us 😊</div></div>
-      <div class="photo-card"><img src="photos/3.jpg"><div class="caption">Forever vibes 💍</div></div>
+      <div class="photo-card">
+        <img src="photos/1.jpg">
+        <div class="caption">The day everything felt right 💕</div>
+      </div>
+      <div class="photo-card">
+        <img src="photos/2.jpg">
+        <div class="caption">Your smile, my weakness 😊</div>
+      </div>
+      <div class="photo-card">
+        <img src="photos/3.jpg">
+        <div class="caption">Always better together 💍</div>
+      </div>
     </div>
   </section>
 
-  <!-- PROPOSAL -->
   <section class="proposal-section red-bg">
     <h1>Will you be my Valentine? 💘</h1>
     <div class="btn-group">
@@ -73,21 +79,23 @@
   </section>
 </div>
 
-<!-- FINAL SCREEN -->
 <div id="finalScreen" class="final-screen" style="display:none;">
   <div class="final-overlay">
-    <div class="merge-names" id="namesInitial">
-      Abhishek <span class="heart-anim">❤️</span> Pooja
+    <div class="merge-names-container">
+      <div id="namesInitial" class="merge-names">
+        <span>Abhishek</span>
+        <span class="heart-anim">❤️</span>
+        <span>Pooja</span>
+      </div>
+
+      <div id="finalName" class="final-name">
+        Pooja Abhishek Kurdekar 💍
+      </div>
     </div>
 
-    <div class="final-name" id="finalName">
-      Pooja Abhishek Kurdekar 💍
-    </div>
-
-    <div class="final-msg" id="finalMsg">
+    <div id="finalMsg" class="final-msg">
       Thank you for choosing me.<br>
-      Today, tomorrow, and all our
-      <span class="highlight">forever ❤️</span>
+      Today, tomorrow, and all our forever ❤️
     </div>
   </div>
 </div>
