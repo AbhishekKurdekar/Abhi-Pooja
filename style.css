@@ -51,8 +51,9 @@ body {
 .final-screen {
   position: fixed;
   inset: 0;
+  z-index: 9999;
   background: url("yes-bg.jpg") center/cover no-repeat;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -113,6 +114,14 @@ body {
   background: red;
   animation: confettiFall 4s linear;
 }
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* GALLERY */
 .photo-card {
   position: relative;
   overflow: hidden;
@@ -121,17 +130,15 @@ body {
 
 .photo-card img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
-/* caption hidden by default */
 .photo-card .caption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.55); /* soft dark */
+  background: rgba(0, 0, 0, 0.55);
   color: #fff;
   padding: 10px 12px;
   font-size: 14px;
@@ -140,12 +147,13 @@ body {
   transition: all 0.3s ease;
 }
 
-/* show on hover */
 .photo-card:hover .caption,
 .photo-card:active .caption {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* PROPOSAL BUTTONS */
 .proposal button {
   font-size: 22px;
   padding: 14px 28px;
@@ -162,12 +170,4 @@ body {
 
 #no {
   background: #ddd;
-}
-
-
-
-@keyframes confettiFall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-  }
 }
