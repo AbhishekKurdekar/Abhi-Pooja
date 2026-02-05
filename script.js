@@ -17,24 +17,21 @@ function moveNo() {
 }
 
 function yesClick() {
-  // hide everything
   document.getElementById("content").style.display = "none";
 
-  // show final screen (acts like new page)
   const final = document.getElementById("finalScreen");
   final.style.display = "flex";
 
-  // reset animation state (important if refreshed)
-  document.querySelector(".merge-names").classList.remove("merge");
+  const merge = document.querySelector(".merge-names");
+  merge.classList.remove("merge");
+
   document.getElementById("finalName").classList.remove("show");
   document.getElementById("finalMsg").classList.remove("show");
 
-  // name merge animation
   setTimeout(() => {
-    document.querySelector(".merge-names").classList.add("merge");
+    merge.classList.add("merge");
   }, 800);
 
-  // final name + message
   setTimeout(() => {
     document.getElementById("finalName").classList.add("show");
     document.getElementById("finalMsg").classList.add("show");
@@ -42,8 +39,7 @@ function yesClick() {
   }, 2400);
 }
 
-
-/* Hearts animation (fixed position) */
+/* Floating hearts */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "floating-heart";
