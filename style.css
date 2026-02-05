@@ -113,6 +113,58 @@ body {
   background: red;
   animation: confettiFall 4s linear;
 }
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* caption hidden by default */
+.photo-card .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.55); /* soft dark */
+  color: #fff;
+  padding: 10px 12px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+/* show on hover */
+.photo-card:hover .caption,
+.photo-card:active .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+.proposal button {
+  font-size: 22px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: #ddd;
+}
+
+
 
 @keyframes confettiFall {
   to {
