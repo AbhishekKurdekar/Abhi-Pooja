@@ -1,69 +1,61 @@
-const PASSWORD = "040825";
-
-/* ---------- HEARTS ---------- */
-setInterval(() => {
-  const heart = document.createElement("span");
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 10 + "px";
-  document.getElementById("heartContainer").appendChild(heart);
-  setTimeout(() => heart.remove(), 8000);
-}, 400);
-
-/* ---------- UNLOCK ---------- */
 function unlock() {
   const pass = document.getElementById("password").value;
-  if (pass === PASSWORD) {
+  if (pass === "040825") {
     document.getElementById("lockScreen").style.display = "none";
     document.getElementById("content").style.display = "block";
     document.getElementById("bgMusic").play();
-    loadImages();
   } else {
-    document.getElementById("error").innerText = "Wrong secret 💔";
+    document.getElementById("error").innerText = "Wrong password 💔";
   }
 }
 
-/* ---------- GALLERY ---------- */
-function loadImages() {
-  const grid = document.getElementById("photoGrid");
-
-  const captions = {
-    "1.jpg": "Our first meet 💕",
-    "2.jpg": "That smile ❤️",
-    "3.jpg": "Forever us ✨"
-  };
-
-  for (let i = 1; i <= 20; i++) {
-    const img = new Image();
-    img.src = `photos/${i}.jpg`;
-
-    img.onload = () => {
-      const card = document.createElement("div");
-      card.className = "photo-card";
-
-      const cap = document.createElement("div");
-      cap.className = "photo-caption";
-      cap.innerText = captions[`${i}.jpg`] || "";
-
-      card.appendChild(img);
-      card.appendChild(cap);
-
-      card.onclick = () => card.classList.toggle("active");
-
-      grid.appendChild(card);
-    };
-  }
-}
-
-/* ---------- NO BUTTON ---------- */
 function moveNo() {
-  const btn = document.getElementById("no");
-  btn.style.top = Math.random() * 80 + "vh";
-  btn.style.left = Math.random() * 80 + "vw";
+  const no = document.getElementById("no");
+  const x = Math.random() * 250 - 125;
+  const y = Math.random() * 120;
+  no.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-/* ---------- YES ---------- */
 function yesClick() {
-  document.querySelector(".proposal").style.display = "none";
-  document.getElementById("finalScreen").style.display = "block";
+  document.getElementById("content").style.display = "none";
+  const final = document.getElementById("finalScreen");
+  final.style.display = "flex";
+
+  setTimeout(() => {
+    document.querySelector(".merge-names").classList.add("merge");
+  }, 1000);
+
+  setTimeout(() => {
+    document.getElementById("finalName").classList.add("show");
+    document.getElementById("finalMsg").classList.add("show");
+    launchConfetti();
+  }, 2600);
 }
+
+/* Hearts animation (fixed position) */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "floating-heart";
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 800);
+
+/* Confetti */
+function launchConfetti() {
+  for (let i = 0; i < 40; i++) {
+    const conf = document.createElement("div");
+    conf.className = "confetti";
+    conf.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(conf);
+    setTimeout(() => conf.remove(), 4000);
+  }
+}
+
+/* Protection */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("dragstart", e => {
+  if (e.target.tagName === "IMG") e.preventDefault();
+});
