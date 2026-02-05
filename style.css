@@ -1,196 +1,101 @@
-:root {
-  --primary-red: #d90429;
-  --hot-pink: #ff4d6d;
-}
-
-body, html {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* PAGE 1 */
-.lock {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.lock-split-bg {
-  position: absolute;
-  inset: 0;
-  display: flex;
-}
-
-.lock-gradient-side {
-  flex: 1;
-  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-}
-
-.lock-image-side {
-  flex: 1;
-  background: url("image_148331.jpg") center/cover no-repeat;
-  filter: brightness(0.7);
-}
-
-.lock-card {
-  position: relative;
-  z-index: 10;
-  background: rgba(255,255,255,0.95);
-  padding: 40px;
-  border-radius: 25px;
-  width: 320px;
+body {
+  background: #ffe6eb;
+  color: #333;
   text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  animation: cardPop 0.6s ease-out;
 }
 
-.profile-circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: -85px auto 15px;
+/* HERO */
+.hero {
+  padding: 40px 20px;
+  background: #ffd6df;
 }
 
-.profile-circle img {
-  width: 100%;
-  height: 100%;
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;       /* ✅ CIRCULAR LOGO */
   object-fit: cover;
+  border: 4px solid #ff5a7a;
+  margin-bottom: 15px;
 }
 
-/* PAGE 2 */
-.pink-bg { background: #fde2e4; }
-.red-bg { background: var(--primary-red); color: white; }
-
-.page-header,
-.journey-section,
-.gallery-section,
-.proposal-section {
-  padding: 80px 20px;
-  text-align: center;
+.hero h1 {
+  margin-bottom: 10px;
 }
 
-.photos {
+.quote {
+  font-style: italic;
+}
+
+/* JOURNEY */
+.journey {
+  background: #d90429;
+  color: white;
+  padding: 30px 20px;
+}
+
+/* MEMORIES */
+.memories {
+  padding: 30px 15px;
+}
+
+.gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.photo-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-/* BUTTONS */
-.btn-group {
-  position: relative;
-  height: 100px;
   margin-top: 20px;
 }
 
-#yes {
-  background: white;
-  color: var(--primary-red);
-  padding: 15px 40px;
-  border-radius: 30px;
-  border: none;
-  font-weight: bold;
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
-/* ✅ ONLY CHANGE HERE: NO button starts slightly right */
-#no {
-  background: rgba(255,255,255,0.3);
-  color: white;
-  padding: 15px 40px;
-  border-radius: 30px;
-  border: none;
-  position: absolute;
-  left: 62%;
-  transform: translateX(-50%);
-}
-
-/* PAGE 3 – FINAL SCREEN */
-.final-screen {
-  height: 100vh;
-  width: 100vw;
-  background: url("BG.jpg") center/cover no-repeat;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.final-overlay {
-  background: rgba(0,0,0,0.6);
+.card img {
   width: 100%;
-  height: 100%;
+  height: 320px;            /* ✅ FIXED HEIGHT */
+  object-fit: cover;        /* ✅ NO IMAGE DISTORTION */
+  transition: transform 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* TEXT OVERLAY */
+.card::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.merge-names {
-  font-size: 40px;
-  font-weight: bold;
-  transition: 1.2s ease-in-out;
-}
-
-.merge-names.hide {
-  transform: scale(0);
+  justify-content: center;
+  font-size: 16px;
+  padding: 15px;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.final-name {
-  font-size: 45px;
-  font-weight: bold;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: 1s ease-out;
+.card:hover::after {
+  opacity: 1;               /* ✅ MESSAGE ON HOVER */
 }
 
-.final-name.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.final-msg {
-  margin-top: 80px;
-  font-size: 22px;
-  opacity: 0;
-  transition: 1.5s ease;
-}
-
-.final-msg.show {
-  opacity: 1;
-}
-
-/* HEARTS */
-.heart-float {
-  position: fixed;
-  bottom: -20px;
-  font-size: 20px;
-  animation: floatUp 6s linear infinite;
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-@keyframes cardPop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+/* VALENTINE */
+.valentine {
+  background: #d90429;
+  color: white;
+  padding: 25px;
+  margin-top: 30px;
 }
