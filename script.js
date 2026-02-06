@@ -17,53 +17,28 @@ function moveNo() {
 }
 
 function yesClick() {
-  // hide everything
-  document.getElementById("content").style.display = "none";
-
-  // show final screen (acts like new page)
-  const final = document.getElementById("finalScreen");
-  final.style.display = "flex";
-
-  // reset animation state (important if refreshed)
-  document.querySelector(".merge-names").classList.remove("merge");
-  document.getElementById("finalName").classList.remove("show");
-  document.getElementById("finalMsg").classList.remove("show");
-
-  // name merge animation
-  setTimeout(() => {
-    document.querySelector(".merge-names").classList.add("merge");
-  }, 800);
-
-  // final name + message
-  setTimeout(() => {
-    document.getElementById("finalName").classList.add("show");
-    document.getElementById("finalMsg").classList.add("show");
-    launchConfetti();
-  }, 2400);
+  document.body.innerHTML = `
+    <div class="final-screen">
+      <div class="merge">Abhishek ❤️ Pooja</div>
+      <div class="final-name">Pooja Abhishek Kurdekar</div>
+      <div class="final-msg">
+        Thank you for choosing me ❤️<br>
+        Today, tomorrow, and all our forever
+      </div>
+    </div>
+  `;
 }
 
-
-/* Hearts animation (fixed position) */
+/* Floating hearts */
 setInterval(() => {
   const heart = document.createElement("div");
-  heart.className = "floating-heart";
+  heart.className = "heart";
   heart.innerText = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (Math.random() * 20 + 15) + "px";
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 6000);
-}, 800);
-
-/* Confetti */
-function launchConfetti() {
-  for (let i = 0; i < 40; i++) {
-    const conf = document.createElement("div");
-    conf.className = "confetti";
-    conf.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(conf);
-    setTimeout(() => conf.remove(), 4000);
-  }
-}
+}, 700);
 
 /* Protection */
 document.addEventListener("contextmenu", e => e.preventDefault());
