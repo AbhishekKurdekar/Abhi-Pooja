@@ -79,7 +79,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  height: 320px; /* 👈 adjust this */
+   /* 👈 adjust this */
 }
 
 .photo-card img {
