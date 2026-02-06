@@ -121,19 +121,19 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
 }
 
 .merge {
   font-size: 40px;
-  animation: mergeOut 2s forwards;
+  animation: mergeOut 4s forwards;
 }
 
 .final-name {
   font-size: 50px;
   opacity: 0;
-  animation: showFinal 2s forwards;
-  animation-delay: 2s;
+  animation: showFinal 3s forwards;
+  animation-delay: 3s;
 }
 
 .final-msg {
