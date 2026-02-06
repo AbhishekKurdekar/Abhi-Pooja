@@ -2,52 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>From Us to Forever 💕</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Love Story 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO / FIRST PAGE -->
-  <section class="hero">
-    <img src="images/logo.jpg" alt="Logo" class="logo" />
-    <h1>From Us to Forever 💞</h1>
-    <p class="quote">"In the story of my life, the best chapters are with you."</p>
-  </section>
+<!-- LOCK SCREEN -->
+<div id="lockScreen" class="lock">
+  <div class="lock-split-bg">
+    <div class="lock-gradient-side"></div>
+    <div class="lock-image-side"></div>
+  </div>
+
+  <div class="lock-card">
+    <div class="profile-circle">
+      <img src="image_148331.jpg" alt="Us">
+    </div>
+    <h1>A Little Surprise</h1>
+    <p>Only for the one who owns my heart ❤️</p>
+
+    <div class="input-wrapper">
+      <input type="password" id="password" placeholder="Enter our secret">
+      <span class="heart-suffix">❤️</span>
+    </div>
+
+    <button class="unlock-btn" onclick="unlock()">Unlock 💖</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="content" style="display:none;">
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <header class="page-header pink-bg">
+    <h1 class="pop-in">From Us to Forever 💞</h1>
+    <p class="fade-in">"In the story of my life, the best chapters are with you."</p>
+  </header>
 
   <!-- JOURNEY -->
-  <section class="journey">
+  <section class="journey-section red-bg wall-anim">
     <h2>Our Journey 🌸</h2>
-    <p>
-      We didn’t plan this love… it just happened 💫 <br>
-      From strangers to soulmates. <br>
-      Ninna jothe irbeku anta ansthide — not just today, but forever ❤️
-    </p>
-  </section>
-
-  <!-- MEMORIES -->
-  <section class="memories">
-    <h2>Our Memories 📸</h2>
-
-    <div class="gallery">
-      <div class="card" data-text="The day everything felt right 💕">
-        <img src="images/img1.jpg" alt="memory1" />
-      </div>
-
-      <div class="card" data-text="Your smile, my weakness 😊">
-        <img src="images/img2.jpg" alt="memory2" />
-      </div>
-
-      <div class="card" data-text="Always better together 💍">
-        <img src="images/img3.jpg" alt="memory3" />
-      </div>
+    <div class="journey-text">
+      <p>We didn’t plan this love… it just happened 💫</p>
+      <p>From strangers to soulmates, every moment mattered.</p>
+      <p class="kannada-text">Ninna jothe irbeku anta ansthide ❤️</p>
     </div>
   </section>
 
-  <!-- VALENTINE -->
-  <section class="valentine">
-    <h2>Will you be my Valentine? 💖</h2>
+  <!-- GALLERY -->
+  <section class="gallery-section pink-bg">
+    <h2>Our Memories 📸</h2>
+    <div class="photos">
+      <div class="photo-card"><img src="photos/1.jpg"><div class="caption">That smile 💕</div></div>
+      <div class="photo-card"><img src="photos/2.jpg"><div class="caption">Us being us 😊</div></div>
+      <div class="photo-card"><img src="photos/3.jpg"><div class="caption">Forever vibes 💍</div></div>
+    </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- PROPOSAL -->
+  <section class="proposal-section red-bg">
+    <h1>Will you be my Valentine? 💘</h1>
+    <div class="btn-group">
+      <button id="yes" onclick="yesClick()">Yes ❤️</button>
+      <button id="no" onmouseover="moveNo()">No 💔</button>
+    </div>
+  </section>
+</div>
+
+<!-- FINAL SCREEN -->
+<div id="finalScreen" class="final-screen" style="display:none;">
+  <div class="final-overlay">
+    <div class="merge-names" id="namesInitial">
+      Abhishek <span class="heart-anim">❤️</span> Pooja
+    </div>
+
+    <div class="final-name" id="finalName">
+      Pooja Abhishek Kurdekar 💍
+    </div>
+
+    <div class="final-msg" id="finalMsg">
+      Thank you for choosing me.<br>
+      Today, tomorrow, and all our
+      <span class="highlight">forever ❤️</span>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
