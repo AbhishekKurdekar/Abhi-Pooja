@@ -1,101 +1,79 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+:root {
+  --primary-red: #d90429;
+  --soft-pink: #ffafbd;
+  --hot-pink: #ff4d6d;
 }
 
 body {
-  background: #ffe6eb;
-  color: #333;
-  text-align: center;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff0f5;
+  overflow-x: hidden;
 }
 
-/* HERO */
-.hero {
-  padding: 40px 20px;
-  background: #ffd6df;
+/* --- PAGE 1: LOGIN STYLES --- */
+.lock { height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; }
+.lock-split-bg { position: absolute; inset: 0; display: flex; z-index: 1; }
+.lock-gradient-side { flex: 1; background: linear-gradient(135deg, var(--soft-pink), #ffc3a0); }
+.lock-image-side { flex: 1; background: url("image_148331.jpg") center/cover no-repeat; filter: brightness(0.7); }
+
+.lock-card {
+  position: relative; z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px; border-radius: 20px; width: 350px;
+  text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  animation: cardPop 0.6s ease-out;
 }
 
-.logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;       /* ✅ CIRCULAR LOGO */
-  object-fit: cover;
-  border: 4px solid #ff5a7a;
-  margin-bottom: 15px;
-}
+.profile-circle { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; margin: -70px auto 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.profile-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-.hero h1 {
-  margin-bottom: 10px;
-}
+.input-group { position: relative; margin: 20px 0; }
+.lock input { width: 100%; padding: 12px 40px 12px 15px; border-radius: 10px; border: 2px solid #ddd; box-sizing: border-box; }
+.heart-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--hot-pink); }
 
-.quote {
-  font-style: italic;
-}
+.unlock-btn { width: 100%; padding: 12px; background: var(--hot-pink); color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
 
-/* JOURNEY */
-.journey {
-  background: #d90429;
-  color: white;
-  padding: 30px 20px;
-}
+/* --- PAGE 2: SPLIT COLORS (UP/DOWN) --- */
+.split-header { display: flex; flex-direction: column; text-align: center; color: white; }
+.top-pink { background: var(--hot-pink); padding: 50px 20px; }
+.bottom-red { background: var(--primary-red); padding: 50px 20px; clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%); margin-top: -20px; }
 
-/* MEMORIES */
-.memories {
-  padding: 30px 15px;
-}
+.journey-text { max-width: 700px; margin: 20px auto; font-style: italic; line-height: 1.6; }
+.kannada-text { font-weight: bold; color: #ffccd5; }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
+/* --- GALLERY --- */
+.gallery { padding: 40px 20px; }
+.gallery-title { color: var(--primary-red); margin-bottom: 30px; }
+.photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.photo-card { border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: white; transition: 0.3s; }
+.photo-card:hover { transform: scale(1.03); }
+.photo-card img { width: 100%; display: block; }
+.caption { padding: 10px; font-size: 14px; color: #555; }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  cursor: pointer;
+/* --- PAGE 3: YES SCREEN (REVERTED) --- */
+.yes-screen {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("image_148331.jpg") center/cover no-repeat;
+  display: flex; justify-content: center; align-items: center; text-align: center; color: white;
 }
+.yes-box h2 { font-size: 2rem; animation: popName 1s ease-out; }
+.yes-box h3 { font-size: 2.5rem; color: var(--soft-pink); animation: popName 1.5s ease-out; }
 
-.card img {
-  width: 100%;
-  height: 320px;            /* ✅ FIXED HEIGHT */
-  object-fit: cover;        /* ✅ NO IMAGE DISTORTION */
-  transition: transform 0.4s ease;
-}
+/* --- ANIMATIONS --- */
+@keyframes cardPop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes popName { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.pop-in { animation: cardPop 1s ease-out; }
+.fade-in { animation: fadeIn 2s ease-in; }
+.slide-up { animation: slideUp 1s ease-out; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-/* HOVER EFFECT */
-.card:hover img {
-  transform: scale(1.1);
-}
+/* Floating Hearts */
+.heart { position: fixed; bottom: -20px; font-size: 20px; z-index: 99; animation: floatUp 6s linear infinite; }
+@keyframes floatUp { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
 
-/* TEXT OVERLAY */
-.card::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  padding: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover::after {
-  opacity: 1;               /* ✅ MESSAGE ON HOVER */
-}
-
-/* VALENTINE */
-.valentine {
-  background: #d90429;
-  color: white;
-  padding: 25px;
-  margin-top: 30px;
-}
+.proposal { padding: 60px 20px; position: relative; height: 200px; }
+.btn-group { position: relative; margin-top: 30px; }
+#yes { background: var(--hot-pink); color: white; border: none; padding: 12px 30px; border-radius: 10px; cursor: pointer; }
+#no { background: #999; color: white; border: none; padding: 12px 30px; border-radius: 10px; position: absolute; left: 50%; transform: translateX(-50%); }
