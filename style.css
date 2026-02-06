@@ -65,7 +65,7 @@ body {
 .photos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  gap: 21px;
 }
 
 @media (max-width: 768px) {
@@ -79,7 +79,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  height: 240px; /* 👈 adjust this */
+  height: 320px; /* 👈 adjust this */
 }
 
 .photo-card img {
